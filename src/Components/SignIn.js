@@ -2,9 +2,12 @@ import img from './../Assets/Image-Slide.png';
 import google_img from './../Assets/google.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { Link } from 'react-router-dom';
 
 export default function SignIn(props) {
+    const { signin,errors } = props.state;
+
+    const disableSigninBtn = (signin.signinEmail =="" || errors.signinEmail) || (errors.password || signin.signinPwd == "");
+
     return (
         <div className='signin-container'>
             <div className='signin-container-left'>
@@ -46,23 +49,23 @@ export default function SignIn(props) {
                     <div className='separator'>Or</div>
                     <div className='email-input'>
                         <p>Email Address or Phone Number</p>
-                        <input type='text' name='signin-email' onChange={(e)=>props.handleChange(e)} />
-                        <input type='text' name='signin-email' placeholder='Enter email address' onChange={(e)=>props.handleChange(e)} />
+                        <input type='text' name='signinEmail' value={signin.signinEmail} placeholder='Enter email address' onChange={(e)=>props.handleChange(e)} />
+                        {errors.signinEmail && <div className="error"> {errors.signinEmail} </div>}
                     </div>
                     <div className='password-input'>
                         <p>Password</p>
-                        <input type='password' name='signin-pwd' value={props.state.signin.signinPwd} onChange={(e)=>props.handleChange(e)} />
+                        <input type='password' name='signinPwd' value={signin.signinPwd} onChange={(e)=>props.handleChange(e)} />
+                        {errors.password && <div className="error"> {errors.password} </div>}
                     </div>
                     <div className='remember-input'>
                         <input type='checkbox' />
                         <span>Remember Me?</span>
                         <a href='/'>Forgot Password</a>
                     </div>
-                    <Link to='/home'>
-                        <div className='submit-btn'>
-                            Sign in
-                    </div>
-                    </Link>
+                    
+                    <button className={`${ disableSigninBtn ? 'disabled-btn' : ''} submit-btn`} disabled={disableSigninBtn} onClick={()=>props.setSignedIn(true)}>
+                        Sign in
+                    </button>
                     <p className='dont-have-account'>Don’t have an account? <a href='/'>Signup</a></p>
                 </div>
             </form>

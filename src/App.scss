@@ -30,6 +30,10 @@ p{
   margin: 0;
   padding: 0;
 }
+.disabled-btn{
+  pointer-events: none;
+  opacity: 0.25;
+}
 .signin-container{
   width: 1000px;
   background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -100,7 +104,6 @@ p{
       padding-bottom: 25px;
       margin: 0;
     }
-
     .signin-btn{
       width: 327px;
       height: 48px;
@@ -204,6 +207,8 @@ p{
       color: #FFFFFF;
       padding: 9px 0;
       margin: 20px auto 11px;
+      cursor: pointer;
+      margin-left: 42px;
     }
     .dont-have-account{
       font: normal normal normal 14px/19px Open Sans;
@@ -386,13 +391,14 @@ p{
         right: 15px;
         padding-top: 16px;
         width: auto;
+        cursor: pointer;
       }
-      .trash-icon:hover{
-        background: #5FD4FF 0% 0% no-repeat padding-box;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-      }
+      // .trash-icon:hover{
+      //   background: #5FD4FF 0% 0% no-repeat padding-box;
+      //   height: 30px;
+      //   width: 30px;
+      //   border-radius: 50%;
+      // }
     }
       .work-exp1{
         padding-bottom: 14px;
@@ -431,9 +437,11 @@ p{
         text-align: center;
         letter-spacing: 0px;
         color: #FFFFFF;
-        padding-top: 7px;
         margin-top: 10px;
         cursor: pointer;
       }
     }
-
+    .error{
+      font-size: 11px;
+      color: red;
+    }

@@ -1,6 +1,6 @@
 import logo from './../Assets/logo.png';
 
-export default function Header(){
+export default function Header(props){
     return(
         <nav className="navbar navbar-expand-lg page-header-main">
             <p className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@ export default function Header(){
                     </li>
                     <li className="nav-item dropdown right-li">
                         <a className="nav-link dropdown-toggle right-header" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hello Sean
+                            Hello {props.name}
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <p className='options'>My Profile</p>
