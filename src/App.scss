@@ -8,6 +8,32 @@
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+  .signin-container{
+    width: 100% !important;
+    .signin-container-left{
+      width: 100% !important;
+      display: block !important;
+      .header-text{
+        padding-top: 91% !important;
+      }
+    }
+    .signin-container-right{
+      width: 100% !important;
+      display: block !important;
+      height: auto;
+      .email-input, .password-input{
+        padding-left: 25px !important;
+      }
+      .submit-btn{
+        margin-left: 25px !important;        
+      }
+      .dont-have-account{
+        margin: unset !important;
+        text-align: center !important;
+        margin-bottom: 10px !important;
+      }
+    }
+  }
   .right-li{
     position: unset !important;
     right: 0px !important;
